@@ -1,19 +1,22 @@
 import Image from 'next/image';
-import Link from 'next/link';
+import Link from 'next/link'
+import NavLink from './nav-link';
 import Container from './container';
 import { comfortaa } from '../fonts';
+import logo from '../../assets/logo.svg';
+import './header.sass';
 
 const Header = () => (
   <Container>
-    <header className="flex flex-col items-center py-12">
-      <Link href="/" className="block mb-7">
-        <Image src="https://placehold.co/240x140.svg" width={240} height={140} />
+    <header className="flex flex-col items-center pt-8 pb-12">
+      <Link href="/" className="block mb-7 hover:opacity-80 transition">
+        <Image src={logo} alt="naydenova.studio logo" width={240} height={111} />
       </Link>
       <nav className={`flex gap-x-10 ${comfortaa.className} font-light text-lg`}>
-        <Link href="/gallery">Gallery</Link>
-        <Link href="/about">About</Link>
-        <Link href="/blog">Blog</Link>
-        <Link href="/contact">Contact</Link>
+        <NavLink href="/gallery" className='navLink'>Gallery</NavLink>
+        <NavLink href="/about" className='navLink'>About</NavLink>
+        <NavLink href="/blog" className='navLink'>Blog</NavLink>
+        <NavLink href="/contact" className='navLink'>Contact</NavLink>
       </nav>
     </header>
   </Container>

@@ -1,3 +1,28 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+a {
+  @apply underline text-pink-900 hover:text-pink-950 focus:text-pink-950;
+}
+
+body {
+  @apply text-grey-900;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  @apply text-black font-semibold;
+  font-family: var(--font-comfortaa);
+}
+
+.button {
+  @apply inline-block px-4 py-1 bg-pink-900 no-underline text-white rounded-sm hover:bg-pink-950 hover:text-white focus:bg-pink-950 focus:text-white transition;
+}
+
+.button-lg {
+  @apply py-2 px-7
+}
+
+.comfortaa {
+  font-family: var(--font-comfortaa);
+}

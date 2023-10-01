@@ -1,16 +1,16 @@
-const Button = ({ href, onClick, children }) => {
-  const classNames = 'inline-block px-4 py-1 bg-teal-700 text-white rounded-sm hover:bg-teal-600 focus:bg-teal-800 transition';
+const Button = ({ href, onClick, children, isLarge }) => {
+  const classes = `button ${isLarge ? 'button-lg' : ''}`;
 
   if (href) {
     return (
-      <a href={href} className={classNames}>
+      <a href={href} className={classes}>
         {children}
       </a>
     )
   }
 
   return (
-    <button onClick={onClick} className={classNames}>
+    <button onClick={onClick} className={classes}>
       {children}
     </button>
   );

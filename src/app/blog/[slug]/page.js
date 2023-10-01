@@ -1,7 +1,7 @@
 import Image from 'next/image';
 
 const BlogDetails = () => (
-  <div className="prose mx-auto pb-12">
+  <div className="prose mx-auto pt-12 pb-24">
     <h1>Article Title</h1>
     <Image alt="" src="https://placehold.co/1496x720.svg" width="584" height="282" />
     <p>

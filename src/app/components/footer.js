@@ -1,14 +1,15 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import Container from '../components/container';
+import textLogo from '../../assets/logo-text.svg';
 
 const Footer = () => (
-  <footer className="bg-teal-800 py-12 text-white">
+  <footer className="py-10 bg-grey-50">
     <Container className="flex justify-between">
-      <Image src="https://placehold.co/120x70.svg" width={120} height={70} />
+      <Image src={textLogo} alt="naydenova.art" width="180" />
       <div className="flex flex-col justify-center">
-        <Link href="#">Privacy Policy</Link>
-        <p>&copy; Naydenova.art 2023. All rights reserved.</p>
+        <Link href="#" className='block mb-2'>Privacy Policy</Link>
+        <p>&copy; Naydenova.studio 2023. All rights reserved.</p>
       </div>
     </Container>
   </footer>

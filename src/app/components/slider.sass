@@ -13,5 +13,38 @@
     font-size: 55px // temp
   .alice-carousel__prev-btn
     left: 0
+    @apply transition
+    .__inactive
+      display: none
+    &:hover
+      @apply opacity-80
+    span:after
+      content: ''
+      display: block
+      width: 33px
+      height: 63px
+      @apply text-pink-900
+      background-image: url("data:image/svg+xml,%3Csvg version='1.2' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 33 63' width='33' height='63'%3E%3Cpath fill='%23d66986' d='m31.8 0.5l0.7 0.7-31.1 31.1-0.8-0.7zm-31.1 30.7l0.7-0.7 31.2 31.1-0.8 0.8z'/%3E%3C/svg%3E")
+
   .alice-carousel__next-btn
     right: 0
+    @apply transition
+    .__inactive
+      display: none
+    &:hover
+      @apply opacity-80
+    span:after
+      content: ''
+      display: block
+      width: 33px
+      height: 63px
+      @apply text-pink-900
+      background-image: url("data:image/svg+xml,%3Csvg version='1.2' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 33 63'%3E%3Cpath fill='%23d66986' d='m0.6 1.2l0.8-0.7 31.1 31.1-0.7 0.7zm31.1 29.3l0.7 0.7-31.1 31.2-0.7-0.8z' /%3E%3C/svg%3E")
+
+  .alice-carousel__dots-item
+    @apply bg-pink-500
+    @apply transition
+    &:hover
+      @apply bg-pink-800
+    &.__active
+      @apply bg-pink-900
