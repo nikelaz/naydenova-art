@@ -1,20 +1,30 @@
 import Container from '../components/container';
 import Image from 'next/image';
 
-const About = () => (
-	<Container className="grid grid-cols-12 gap-8 pt-12 pb-24">
-    <Image className="col-start-2 col-end-6" src="https://placehold.co/450x600.svg" width={450} height={600} />
-    <div className="col-start-6 col-end-11 prose max-w-none">
-      <h1>In rutrum id magna et pulvinar.</h1>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin volutpat enim at imperdiet ornare. Aenean egestas neque velit, ac finibus nunc sollicitudin sed. Vestibulum bibendum facilisis malesuada. Maecenas vehicula auctor sagittis. Integer non elit ultricies, varius nulla vel, viverra arcu. Sed pharetra commodo magna, eu dapibus risus rutrum sed. Proin feugiat vel nibh eget lacinia. Duis nunc elit, tincidunt in eros vitae, imperdiet aliquam lacus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ut magna ut mauris tincidunt finibus. Vivamus convallis sem erat, id placerat leo volutpat eget. Proin tristique tempus orci, nec efficitur purus consectetur fringilla. Cras sodales lectus tincidunt varius efficitur. Morbi placerat erat sit amet tincidunt viverra. Nunc in augue id arcu placerat aliquam.
-      </p>
-      <h2>Praesent sed nibh viverra</h2>
-      <p>
-        Praesent ultrices, ligula non viverra luctus, est dolor molestie velit, quis rutrum leo turpis vel enim.
-      </p>
-    </div>
-  </Container>
-);
+async function fetchPageData() {
+  const res = await fetch('https://naydenova.art/cms/wp-json/wp/v2/pages?slug=about&_embed');
+  const data = await res.json();
+  return data[0];
+}
+
+const About = async () => {
+  const page = await fetchPageData();
+
+  return (
+    <Container className="grid grid-cols-12 gap-8 pt-12 pb-24">
+      <Image
+        className="col-start-2 col-end-6"
+        src={page['_embedded']['wp:featuredmedia'][0].source_url}
+        alt=""
+        width={450}
+        height={600}
+      />
+      <div className="col-start-6 col-end-11 prose max-w-none">
+        <h1>{page.title.rendered}</h1>
+        <div dangerouslySetInnerHTML={{__html: page.content.rendered}} />
+      </div>
+    </Container>
+  );
+}
 
 export default About;

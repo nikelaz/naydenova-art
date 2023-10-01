@@ -1,7 +1,8 @@
 export const fieldTypes = {
   TEXT: 'TEXT',
   EMAIL: 'EMAIL',
-  TEXTAREA: 'TEXTAREA'
+  TEXTAREA: 'TEXTAREA',
+  TEL: 'TEL',
 };
 
 const Field = ({ id, label, type, required }) => {
@@ -9,8 +10,8 @@ const Field = ({ id, label, type, required }) => {
 
   return (
     <div className="mb-4">
-      <label id={id} className="block text-sm">{label}</label>
-      { type === fieldTypes.TEXT || type === fieldTypes.EMAIL ? <input type={type.toLowerCase()} className={fieldStyles} id={id} required={required} name={id} /> : null }
+      <label id={id} className="block text-sm mb-1">{label}</label>
+      { type === fieldTypes.TEXT || type === fieldTypes.EMAIL || type === fieldTypes.TEL ? <input type={type.toLowerCase()} className={fieldStyles} id={id} required={required} name={id} /> : null }
       { type === fieldTypes.TEXTAREA ? <textarea rows="5" className={fieldStyles} id={id} required={required} name={id} /> : null }
     </div>
   );

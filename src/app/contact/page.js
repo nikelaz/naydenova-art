@@ -1,7 +1,6 @@
+import ContactForm from '../components/contact-form';
 import Container from '../components/container';
 import Image from 'next/image';
-import Field, { fieldTypes } from '../components/field';
-import Button from '../components/button';
 
 const Contact = () => (
   <Container className="grid grid-cols-12 gap-8 pt-12 pb-24 px-5">
@@ -11,37 +10,7 @@ const Contact = () => (
       <p>Or email me at <a href="mailto:dora@naydenova.art">dora@naydenova.art</a></p>
     </div>
     <div className="col-start-7 col-end-11">
-      <form action="#">
-        <Field
-          id="name"
-          label="Name"
-          required={true}
-          type={fieldTypes.TEXT}
-        />
-
-        <Field
-          id="email"
-          label="Email"
-          required={true}
-          type={fieldTypes.EMAIL}
-        />
-
-        <Field
-          id="phone"
-          label="Phone"
-          required={true}
-          type={fieldTypes.TEXT}
-        />
-
-        <Field
-          id="message"
-          label="Message"
-          required={false}
-          type={fieldTypes.TEXTAREA}
-        />
-
-        <Button isLarge={true}>Submit</Button>
-      </form>
+      <ContactForm />
     </div>
   </Container>
 );

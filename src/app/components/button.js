@@ -1,4 +1,4 @@
-const Button = ({ href, onClick, children, isLarge }) => {
+const Button = ({ href, onClick, children, isLarge, disabled }) => {
   const classes = `button ${isLarge ? 'button-lg' : ''}`;
 
   if (href) {
@@ -10,7 +10,7 @@ const Button = ({ href, onClick, children, isLarge }) => {
   }
 
   return (
-    <button onClick={onClick} className={classes}>
+    <button onClick={onClick} disabled={disabled} className={classes}>
       {children}
     </button>
   );
