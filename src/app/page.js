@@ -1,17 +1,19 @@
-import Image from 'next/image';
-import Slider, { Slide } from './components/slider';
+import Slider from './components/slider';
 import Card from './components/card';
 import Container from './components/container';
 import { comfortaa } from './fonts';
+import Image from 'next/image';
+
+const sliderItems = [
+  <Image key="1" alt="" src="https://placehold.co/1496x720.svg" width="1496" height="720" />,
+  <Image key="2" alt="" src="https://placehold.co/1496x720.svg" width="1496" height="720" />,
+  <Image key="3" alt="" src="https://placehold.co/1496x720.svg" width="1496" height="720" />
+];
 
 const Home = () => (
   <Container>
     <section className="pb-6">
-      <Slider>
-        <Slide>
-          <Image src="https://placehold.co/1496x720.svg" width="1496" height="720" />
-        </Slide>
-      </Slider>
+      <Slider items={sliderItems} />
     </section>
     <section className="pt-6 pb-12">
       <h1 className={`${comfortaa.className} text-4xl font-semibold text-teal-950 text-center mb-12`}>Latest works</h1>
