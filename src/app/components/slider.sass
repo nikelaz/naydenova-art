@@ -1,9 +1,19 @@
 .slider
+  .alice-carousel:before
+    content: ''
+    position: absolute
+    top: 0
+    right: 0
+    bottom: 0
+    left: 0
+    background-color: rgba(0, 0, 0, 0.15)
+
   .alice-carousel__dots
     position: absolute
     bottom: 0
     left: 50%
     transform: translateX(-50%)
+    z-index: 1
   .alice-carousel__prev-btn,
   .alice-carousel__next-btn
     width: auto
@@ -11,40 +21,62 @@
     top: 50%
     transform: translateY(-50%)
     font-size: 55px // temp
+    z-index: 2
   .alice-carousel__prev-btn
     left: 0
     @apply transition
     .__inactive
       display: none
-    &:hover
-      @apply opacity-80
     span:after
       content: ''
       display: block
-      width: 33px
-      height: 63px
-      @apply text-pink-900
-      background-image: url("data:image/svg+xml,%3Csvg version='1.2' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 33 63' width='33' height='63'%3E%3Cpath fill='%23d66986' d='m31.8 0.5l0.7 0.7-31.1 31.1-0.8-0.7zm-31.1 30.7l0.7-0.7 31.2 31.1-0.8 0.8z'/%3E%3C/svg%3E")
+      width: 20px
+      height: 38px
+      @apply text-white
+      background-image: url("data:image/svg+xml,%3Csvg version='1.2' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 33 63' width='33' height='63'%3E%3Cpath fill='%23fff' d='m31.8 0.5l0.7 0.7-31.1 31.1-0.8-0.7zm-31.1 30.7l0.7-0.7 31.2 31.1-0.8 0.8z'/%3E%3C/svg%3E")
+      background-position: center left
+    @media screen and (max-width: 640px)
+      display: none
 
   .alice-carousel__next-btn
     right: 0
     @apply transition
     .__inactive
       display: none
-    &:hover
-      @apply opacity-80
     span:after
       content: ''
       display: block
-      width: 33px
-      height: 63px
-      @apply text-pink-900
-      background-image: url("data:image/svg+xml,%3Csvg version='1.2' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 33 63'%3E%3Cpath fill='%23d66986' d='m0.6 1.2l0.8-0.7 31.1 31.1-0.7 0.7zm31.1 29.3l0.7 0.7-31.1 31.2-0.7-0.8z' /%3E%3C/svg%3E")
+      width: 20px
+      height: 38px
+      @apply text-white
+      background-image: url("data:image/svg+xml,%3Csvg version='1.2' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 33 63'%3E%3Cpath fill='%23fff' d='m0.6 1.2l0.8-0.7 31.1 31.1-0.7 0.7zm31.1 29.3l0.7 0.7-31.1 31.2-0.7-0.8z' /%3E%3C/svg%3E")
+    @media screen and (max-width: 640px)
+      display: none
+
+  .alice-carousel__next-btn-item,
+  .alice-carousel__prev-btn-item
+    backdrop-filter: blur(5px)
+    padding: 15px
+    border-radius: 8px
+    transition: .2s background-color
+    background-color: rgba(0, 0, 0, 0.1)
+    &:hover
+      backdrop-filter: blur(10px)
+      background-color: rgba(0, 0, 0, 0.2)
+
+  .alice-carousel__next-btn-item
+    margin-right: 20px
+  
+  .alice-carousel__prev-btn-item
+    margin-left: 20px
 
   .alice-carousel__dots-item
-    @apply bg-pink-500
+    @apply bg-white
     @apply transition
+    @apply opacity-50
     &:hover
-      @apply bg-pink-800
+      @apply bg-white
+      @apply opacity-80
     &.__active
-      @apply bg-pink-900
+      @apply bg-white
+      @apply opacity-100

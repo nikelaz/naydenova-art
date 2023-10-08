@@ -5,7 +5,7 @@ import textLogo from '../../assets/logo-text.svg';
 
 const Footer = () => (
   <footer className="py-10 bg-grey-50">
-    <Container className="flex justify-between">
+    <Container className="flex flex-col md:flex-row justify-between">
       <Image src={textLogo} alt="naydenova.art" width="180" />
       <div className="flex flex-col justify-center">
         <Link href="#" className='block mb-2'>Privacy Policy</Link>

@@ -14,7 +14,7 @@ const Slider = ({items, className}) => {
 
   return (
     <div className={`slider ${className}`}>
-      <AliceCarousel keyboardNavigation={true} mouseTracking items={items} />
+      <AliceCarousel keyboardNavigation={true} mouseTracking items={sliderItems} />
     </div>
   );
 };

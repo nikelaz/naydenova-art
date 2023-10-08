@@ -2,6 +2,7 @@ import Slider from './components/slider';
 import Card from './components/card';
 import Container from './components/container';
 import Image from 'next/image';
+import './page.sass';
 
 async function fetchSlides() {
   const res = await fetch('https://naydenova.art/cms/wp-json/wp/v2/homepage-slides?acf_format=standard&_fields=title,acf');
@@ -21,7 +22,11 @@ const Home = async () => {
     fetchLatestArt()
   ]);
 
-  const sliderItems = slides.map(slide => <Image key={slide.Title} alt={slide.Title} src={slide.acf.image} className="block mx-auto" width="1496" height="720" />);
+  const sliderItems = slides.map(slide => (
+    <div className="slider_image" key={slide.Title}>
+      <Image alt={slide.Title} src={slide.acf.image} className="block mx-auto" width="1496" height="720" />
+    </div>
+  ));
 
   return (
     <>
@@ -29,9 +34,9 @@ const Home = async () => {
         <Slider items={sliderItems} />
       </section>
       <Container>
-        <section className="pt-12 pb-24">
+        <section className="pt-4 pb-10 md:pt-12 md:pb-24">
           <h1 className="text-4xl text-teal-950 text-center mb-12">Latest works</h1>
-          <div className="grid grid-cols-4 gap-x-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
             {art.map(item => (
               <Card
                 key={item.id}
