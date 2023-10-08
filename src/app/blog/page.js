@@ -14,8 +14,8 @@ const Blog = async () => {
   const posts = await fetchPosts();
 
   return (
-	<Container className="grid grid-cols-12 gap-8 pt-12 pb-24">
-    <div className="grid grid-cols-2 gap-8 col-start-3 col-end-11">
+	<Container className="grid grid-cols-1 xl:grid-cols-12 gap-8 pt-12 pb-24">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 xl:col-start-3 xl:col-end-11">
       {posts.map(post => <BlogPost title={post.title.rendered} imageUrl={post['_embedded']['wp:featuredmedia'][0]['source_url']} slug={post.slug} desc={post.excerpt.rendered} key={post.id} />)}
     </div>
   </Container>

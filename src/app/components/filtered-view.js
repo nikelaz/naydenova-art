@@ -38,7 +38,7 @@ const FilteredView = ({artworks}) => {
 
   return (
     <>
-      <div className="flex gap-6 justify-center mb-12">
+      <div className="flex gap-6 flex-wrap justify-center mb-12">
         {filters.map(filter => (
           <FilterButton
             key={filter.slug}
@@ -49,7 +49,7 @@ const FilteredView = ({artworks}) => {
           </FilterButton>
         ))}
       </div>
-      <div className="grid grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
         {artworks.map(art => (
           <Card
             key={art.id}

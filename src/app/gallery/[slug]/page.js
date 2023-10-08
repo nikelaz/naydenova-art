@@ -32,9 +32,9 @@ const ArtDetails = async ({params}) => {
   const sliderItems = getSliderItems(art);
 
   return (
-    <Container className="pt-12 pb-24 grid grid-cols-12 gap-x-8">
-      <Slider className="col-start-2 col-end-7" items={sliderItems} />
-      <div className="col-start-7 col-end-12">
+    <Container className="pt-12 pb-24 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-12 gap-8">
+      <Slider className="xl:col-start-2 xl:col-end-7" items={sliderItems} />
+      <div className="xl:col-start-7 xl:col-end-12">
         <Link href={`/gallery?category=${art.acf.category.slug}`} className='block mb-3 text-teal-950'>{art.acf.category.name}</Link>
         <h1 className={`${comfortaa.className} text-4xl font-semibold text-teal-950 mb-6`}>
           {art.title.rendered}
