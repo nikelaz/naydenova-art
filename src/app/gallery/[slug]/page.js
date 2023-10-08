@@ -4,6 +4,7 @@ import { comfortaa } from '@/app/fonts';
 import Image from 'next/image';
 import Link from 'next/link';
 import Slider from '@/app/components/slider';
+import './page.sass';
 
 async function fetchArtBySlug(slug) {
   const res = await fetch(`https://naydenova.art/cms/wp-json/wp/v2/art?acf_format=standard&_fields=id,title,acf,slug&slug=${slug}`);
@@ -20,7 +21,9 @@ function getSliderItems(art) {
   }
 
   return sliderItems.map((item, index) => (
-    <Image key={index} alt="" src={item} width={604} height={604} />
+    <div className="slider_img" key={index}>
+      <Image alt="" src={item} width={604} height={604} />
+    </div>
   ));
 }
 

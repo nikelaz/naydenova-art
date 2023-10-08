@@ -2,6 +2,7 @@ import Container from '../components/container';
 import Image from 'next/image';
 import Link from 'next/link';
 import { comfortaa } from '../fonts';
+import './page.sass';
 
 async function fetchPosts() {
   const res = await fetch('https://naydenova.art/cms/wp-json/wp/v2/posts?_embed=wp:featuredmedia');
@@ -23,7 +24,9 @@ const Blog = async () => {
 
 const BlogPost = ({slug, imageUrl, title, desc}) => (
   <div>
-    <Image className="mb-6" src={imageUrl} alt="thumbnail" width={596} height={336} />
+    <Link href={`/blog/${slug}`} className="blog_image mb-5">
+      <Image className="mb-6" src={imageUrl} alt="thumbnail" width={596} height={336} />
+    </Link>
     <Link href={`/blog/${slug}`} className={`${comfortaa.className} block text-2xl font-semibold text-teal-800 hover:text-teal-950 transition mb-2`}>{title}</Link>
     <div dangerouslySetInnerHTML={{__html: desc}} />
   </div>
