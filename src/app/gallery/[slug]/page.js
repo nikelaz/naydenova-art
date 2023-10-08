@@ -50,4 +50,17 @@ const ArtDetails = async ({params}) => {
   );
 };
 
+async function fetchArtSlugs() {
+  const res = await fetch('https://naydenova.art/cms/wp-json/wp/v2/art?_fields=slug');
+  const slugs = await res.json();
+  return slugs;
+}
+
+export async function generateStaticParams() {
+  const posts = await fetchArtSlugs();
+  return posts.map((post) => ({
+    slug: post.slug,
+  }));
+}
+
 export default ArtDetails;
