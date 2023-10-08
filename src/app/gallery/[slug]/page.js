@@ -5,12 +5,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 import Slider from '@/app/components/slider';
 
-const sliderItems = [
-  ,
-  <Image key="2" alt="" src="https://placehold.co/604x604.svg" width={604} height={604} />,
-  <Image key="2" alt="" src="https://placehold.co/604x604.svg" width={604} height={604} />
-];
-
 async function fetchArtBySlug(slug) {
   const res = await fetch(`https://naydenova.art/cms/wp-json/wp/v2/art?acf_format=standard&_fields=id,title,acf,slug&slug=${slug}`);
   const art = await res.json();
