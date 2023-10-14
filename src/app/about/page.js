@@ -1,8 +1,9 @@
 import Container from '../components/container';
 import Image from 'next/image';
+import config from '../config';
 
 async function fetchPageData() {
-  const res = await fetch('https://naydenova.art/cms/wp-json/wp/v2/pages?slug=about&_embed');
+  const res = await fetch(`${config.apiUrl}/wp/v2/pages?slug=about&_embed`);
   const data = await res.json();
   return data[0];
 }

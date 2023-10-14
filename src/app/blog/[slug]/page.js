@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import Container from '@/app/components/container';
+import config from '@/app/config';
 
 const BlogDetails = async ({params}) => {
   const [ post ] = await fetchPostDetails(params.slug);
@@ -16,13 +17,13 @@ const BlogDetails = async ({params}) => {
 }
 
 async function fetchPostDetails(slug) {
-  const res = await fetch(`https://naydenova.art/cms/wp-json/wp/v2/posts?_embed=wp:featuredmedia&slug=${encodeURIComponent(slug)}`);
+  const res = await fetch(`${config.apiUrl}/wp/v2/posts?_embed=wp:featuredmedia&slug=${encodeURIComponent(slug)}`);
   const posts = await res.json();
   return posts;
 }
 
 async function fetchPostSlugs() {
-  const res = await fetch('https://naydenova.art/cms/wp-json/wp/v2/posts?_fields=slug');
+  const res = await fetch(`${config.apiUrl}/wp/v2/posts?_fields=slug`);
   const posts = await res.json();
   return posts;
 }

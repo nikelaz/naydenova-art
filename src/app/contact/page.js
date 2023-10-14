@@ -7,7 +7,7 @@ const Contact = () => (
     <div className="xl:col-start-3 xl:col-end-6">
       <Image src="https://placehold.co/350x300.svg" width={350} height={300} className="mb-5" />
       <p className="mb-2">Contact me when you fill the contact form</p>
-      <p>Or email me at <a href="mailto:dora@naydenova.art">dora@naydenova.art</a></p>
+      <p>Or email me at <a href="mailto:dora@naydenova.studio">dora@naydenova.studio</a></p>
     </div>
     <div className="xl:col-start-7 xl:col-end-11">
       <ContactForm />

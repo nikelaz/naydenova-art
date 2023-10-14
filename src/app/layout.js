@@ -4,7 +4,7 @@ import Footer from './components/footer';
 import './globals.css';
 
 export const metadata = {
-  title: 'Naydenova.art',
+  title: 'Naydenova.studio',
 };
 
 const RootLayout = ({ children }) => (

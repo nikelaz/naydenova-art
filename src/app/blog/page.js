@@ -2,10 +2,11 @@ import Container from '../components/container';
 import Image from 'next/image';
 import Link from 'next/link';
 import { comfortaa } from '../fonts';
+import config from '../config';
 import './page.sass';
 
 async function fetchPosts() {
-  const res = await fetch('https://naydenova.art/cms/wp-json/wp/v2/posts?_embed=wp:featuredmedia');
+  const res = await fetch(`${config.apiUrl}/wp/v2/posts?_embed=wp:featuredmedia`);
   const posts = await res.json();
   return posts;
 }

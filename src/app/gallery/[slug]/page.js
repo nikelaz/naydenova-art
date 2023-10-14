@@ -4,10 +4,11 @@ import { comfortaa } from '@/app/fonts';
 import Image from 'next/image';
 import Link from 'next/link';
 import Slider from '@/app/components/slider';
+import config from '@/app/config';
 import './page.sass';
 
 async function fetchArtBySlug(slug) {
-  const res = await fetch(`https://naydenova.art/cms/wp-json/wp/v2/art?acf_format=standard&_fields=id,title,acf,slug&slug=${slug}`);
+  const res = await fetch(`${config.apiUrl}/wp/v2/art?acf_format=standard&_fields=id,title,acf,slug&slug=${slug}`);
   const art = await res.json();
   return art[0];
 }
@@ -48,7 +49,7 @@ const ArtDetails = async ({params}) => {
 };
 
 async function fetchArtSlugs() {
-  const res = await fetch('https://naydenova.art/cms/wp-json/wp/v2/art?_fields=slug');
+  const res = await fetch(`${config.apiUrl}/wp/v2/art?_fields=slug`);
   const slugs = await res.json();
   return slugs;
 }

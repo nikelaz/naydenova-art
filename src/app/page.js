@@ -2,16 +2,17 @@ import Slider from './components/slider';
 import Card from './components/card';
 import Container from './components/container';
 import Image from 'next/image';
+import config from './config';
 import './page.sass';
 
 async function fetchSlides() {
-  const res = await fetch('https://naydenova.art/cms/wp-json/wp/v2/homepage-slides?acf_format=standard&_fields=title,acf');
+  const res = await fetch(`${config.apiUrl}/wp/v2/homepage-slides?acf_format=standard&_fields=title,acf`);
   const slides = await res.json();
   return Array.from(slides);
 }
 
 async function fetchLatestArt() {
-  const res = await fetch('https://naydenova.art/cms/wp-json/wp/v2/art?acf_format=standard&_fields=id,slug,title,acf&per_page=4');
+  const res = await fetch(`${config.apiUrl}/wp/v2/art?acf_format=standard&_fields=id,slug,title,acf&per_page=4`);
   const art = await res.json();
   return Array.from(art);
 }
