@@ -18,11 +18,11 @@ jobs:
     
     - name: Build with Next.js
       run: npx next build
-
-    - name: 📂 Sync files with FTP
-      uses: airvzxf/ftp-deployment-action@latest
+    
+    - name: 📂 Sync files
+      uses: SamKirkland/FTP-Deploy-Action@v4.3.4
       with:
         server: ${{secrets.ftp_server}}
-        user: ${{secrets.ftp_username}}
+        username: ${{secrets.ftp_username}}
         password: ${{secrets.ftp_password}}
-        local-dir: ./out/
+        local-dir: ./out
