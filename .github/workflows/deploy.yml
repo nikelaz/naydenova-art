@@ -17,7 +17,7 @@ jobs:
       run: npm ci
     
     - name: Build with Next.js
-    run: npx next build
+      run: npx next build
 
     - name: 📂 Sync files with FTP
       uses: genietim/ftp-action@releases/v4
