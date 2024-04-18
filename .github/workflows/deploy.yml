@@ -20,7 +20,7 @@ jobs:
       run: npx next build
 
     - name: 📂 Sync files with FTP
-      uses: genietim/ftp-action@releases/v4
+      uses: genietim/ftp-action@releases/v4.0.1
       with:
         host: ${{secrets.ftp_server}}
         user: ${{secrets.ftp_username}}
