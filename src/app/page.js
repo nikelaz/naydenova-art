@@ -36,7 +36,7 @@ const Home = async () => {
       </section>
       <Container>
         <section className="pt-4 pb-10 md:pt-12 md:pb-24">
-          <h1 className="text-4xl text-teal-950 text-center mb-12">Latest works</h1>
+          <h1 className="text-4xl text-teal-950 text-center mb-12">Какво Ново?</h1>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
             {art.map(item => (
               <Card
