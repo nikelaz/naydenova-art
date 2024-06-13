@@ -59,7 +59,7 @@ const FilteredView = ({artworks}) => {
             imageHeight={478}
             title={art.title.rendered}
             href={`/gallery/${art.slug}`}
-            ctaText="Explore"
+            ctaText="Виж Повече"
             isHidden={activeFilter !== 'all' && art.acf.category.slug !== activeFilter}
           />
         ))}
