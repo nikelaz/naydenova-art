@@ -8,8 +8,8 @@ const Footer = () => (
     <Container className="flex flex-col md:flex-row justify-between">
       <Image src={textLogo} alt="naydenova.studio" width="180" />
       <div className="flex flex-col justify-center">
-        <Link href="#" className='block mb-2'>Privacy Policy</Link>
-        <p>&copy; Naydenova.studio 2023. All rights reserved.</p>
+        <Link href="#" className='block mb-2'>Политика за Поверителност</Link>
+        <p>&copy; Naydenova.studio 2024. Всички права запазени.</p>
       </div>
     </Container>
   </footer>
