@@ -40,10 +40,10 @@ const Nav = () => {
             <path fill="currentColor" d="m-0.2 2.1l2.1-2.2 81.1 81.1-2.1 2.2zm81.1-2.2l2.1 2.2-81.1 81.1-2.1-2.2z"/>
           </svg>
         </button>
-        <NavLink href="/gallery" onClick={closeNav} className='navLink'>Gallery</NavLink>
-        <NavLink href="/about" onClick={closeNav} className='navLink'>About</NavLink>
-        <NavLink href="/blog" onClick={closeNav} className='navLink'>Blog</NavLink>
-        <NavLink href="/contact" onClick={closeNav} className='navLink'>Contact</NavLink>
+        <NavLink href="/gallery" onClick={closeNav} className='navLink'>Галерия</NavLink>
+        <NavLink href="/about" onClick={closeNav} className='navLink'>За Мен</NavLink>
+        <NavLink href="/blog" onClick={closeNav} className='navLink'>Блог</NavLink>
+        <NavLink href="/contact" onClick={closeNav} className='navLink'>Контакти</NavLink>
       </nav>
     </div>
   );
