@@ -47,7 +47,7 @@ const Home = async () => {
                 imageHeight={478}
                 title={item.title.rendered}
                 href={`/gallery/${item.slug}`}
-                ctaText="Explore"  
+                ctaText="Виж Повече"  
               />
             ))}
           </div>
