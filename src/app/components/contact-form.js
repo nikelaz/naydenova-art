@@ -58,35 +58,35 @@ const ContactForm = () => {
       <form onSubmit={handleSubmit}>
         <Field
           id="full_name"
-          label="Name"
+          label="Име"
           required={true}
           type={fieldTypes.TEXT}
         />
 
         <Field
           id="email"
-          label="Email"
+          label="Имейл"
           required={true}
           type={fieldTypes.EMAIL}
         />
 
         <Field
           id="phone"
-          label="Phone"
+          label="Телефон"
           required={true}
           type={fieldTypes.TEL}
         />
 
         <Field
           id="message"
-          label="Message"
+          label="Съобщение"
           required={false}
           type={fieldTypes.TEXTAREA}
         />
 
         { errorMessage && <p class="text-red mb-2">{errorMessage}</p> }
 
-        <Button isLarge={true} disabled={isLoading}>{isLoading ? 'Loading...' : 'Submit'}</Button>
+        <Button isLarge={true} disabled={isLoading}>{isLoading ? 'Моля изчакайте...' : 'Изпрати'}</Button>
       </form>
     </>
   );
