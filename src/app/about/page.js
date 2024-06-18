@@ -22,7 +22,7 @@ const About = async () => {
       />
       <div className="xl:col-start-6 xl:col-end-11 prose max-w-none">
         <h1>{page.title.rendered}</h1>
-        <div dangerouslySetInnerHTML={{__html: page.content.rendered}} />
+        <div className="text-justify" dangerouslySetInnerHTML={{__html: page.content.rendered}} />
       </div>
     </Container>
   );

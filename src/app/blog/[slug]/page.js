@@ -10,7 +10,7 @@ const BlogDetails = async ({params}) => {
       <div className="prose mx-auto pt-12 pb-24">
         <h1>{post.title.rendered}</h1>
         <Image alt={`${post.title.rendered} featured image`} src={post['_embedded']['wp:featuredmedia'][0]['source_url']} width="584" height="282" />
-        <div dangerouslySetInnerHTML={{__html: post.content.rendered}} />
+        <div className="text-justify" dangerouslySetInnerHTML={{__html: post.content.rendered}} />
       </div>
     </Container>
   );

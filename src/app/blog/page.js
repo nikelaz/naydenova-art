@@ -28,8 +28,8 @@ const BlogPost = ({slug, imageUrl, title, desc}) => (
     <Link href={`/blog/${slug}`} className="blog_image mb-5">
       <Image className="mb-6" src={imageUrl} alt="thumbnail" width={596} height={336} />
     </Link>
-    <Link href={`/blog/${slug}`} className={`${comfortaa.className} block text-2xl font-semibold text-teal-800 hover:text-teal-950 transition mb-2`}>{title}</Link>
-    <div dangerouslySetInnerHTML={{__html: desc}} />
+    <Link href={`/blog/${slug}`} className={`${comfortaa.className} block text-2xl font-semibold text-teal-800 hover:text-teal-950 transition mb-2 no-underline`}>{title}</Link>
+    <div className="text-justify" dangerouslySetInnerHTML={{__html: desc}} />
   </div>
 );
 

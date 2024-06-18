@@ -12,7 +12,7 @@ function getFilters(artworks) {
 
   const filters = [{
     slug: 'all', 
-    name: 'All'
+    name: 'Всички'
   }];
 
   filtersMap.forEach((val, key) => {
