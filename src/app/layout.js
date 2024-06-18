@@ -10,9 +10,6 @@ export const metadata = {
 
 const RootLayout = ({ children }) => (
   <html lang="en">
-    <Head>
-      <GoogleTagManager gtmId="GTM-KDJLH69B" />
-    </Head>
     <body className={`${roboto.className} ${comfortaa.variable}`}>
       <Header />
       <main>
@@ -20,6 +17,7 @@ const RootLayout = ({ children }) => (
       </main>
       <Footer />
     </body>
+    <GoogleTagManager gtmId="GTM-KDJLH69B" />
   </html>
 );
 
