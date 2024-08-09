@@ -22,7 +22,7 @@ const ContactForm = () => {
       body: formData
     };
     
-    const res = await fetch('https://naydenova.art/cms/wp-json/contact-form-7/v1/contact-forms/33/feedback', reqOptions);
+    const res = await fetch('https://naydenova.studio/cms/wp-json/contact-form-7/v1/contact-forms/33/feedback', reqOptions);
     const json = await res.json();
 
     if (!json.message) {
