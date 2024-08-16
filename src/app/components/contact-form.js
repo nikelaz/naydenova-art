@@ -2,11 +2,15 @@
 import Field, { fieldTypes } from '../components/field';
 import Button from '../components/button';
 import { useState } from 'react';
+import { useSearchParams } from 'next/navigation';
 
 const ContactForm = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [successMessage, setSuccessMessage] = useState(null);
   const [errorMessage, setErrorMessage] = useState(null);
+  const searchParams = useSearchParams();
+  const product = searchParams.get('art');
+  const productUrl = product ? `https://naydenova.studio/gallery/${product}` : '';
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -83,6 +87,8 @@ const ContactForm = () => {
           required={false}
           type={fieldTypes.TEXTAREA}
         />
+
+        <input type="hidden" name="product" defaultValue={productUrl}/>
 
         { errorMessage && <p class="text-red mb-2">{errorMessage}</p> }
 

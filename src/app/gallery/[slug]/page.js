@@ -42,7 +42,7 @@ const ArtDetails = async ({params}) => {
         </h1>
         <p className='mb-6'>{art.acf.size}</p>
         <p className='mb-6'>{art.acf.description}</p>
-        <Button href={`/contact?art=${art.id}`} isLarge={true}>Направи Запитване</Button>
+        <Button href={`/contact?art=${encodeURIComponent(params.slug)}`} isLarge={true}>Направи Запитване</Button>
       </div>
     </Container>
   );
