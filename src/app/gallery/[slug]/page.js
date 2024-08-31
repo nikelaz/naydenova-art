@@ -28,9 +28,22 @@ function getSliderItems(art) {
   ));
 }
 
+const isDecimal = num => num % 1 != 0;
+
+const formatPrice = (num) => {
+  const floatNum = parseFloat(num);
+  if (isDecimal(num)) return floatNum.toFixed(2);
+  return parseInt(floatNum);
+}
+
 const ArtDetails = async ({params}) => {
   const art = await fetchArtBySlug(params.slug);
   const sliderItems = getSliderItems(art);
+  let discountedPrice = null;
+
+  if (art.acf.price && art.acf.discount && art.acf.discount > 0) {
+    discountedPrice = art.acf.price - (art.acf.price * (art.acf.discount / 100));
+  }
 
   return (
     <Container className="pt-12 pb-24 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-12 gap-8">
@@ -42,6 +55,26 @@ const ArtDetails = async ({params}) => {
         </h1>
         <p className='mb-6'>{art.acf.size}</p>
         <p className='mb-6'>{art.acf.description}</p>
+        <div className="mb-6">
+          {art.acf.price ? (
+            <div className="mb-1">
+              {discountedPrice !== null ? (
+                <div className="flex gap-3 text-lg font-medium">
+                  <span className="line-through">{formatPrice(art.acf.price)} лв</span>
+                  <span className="text-pink-950">{art.acf.discount}% Отстъпка!</span>
+                </div>
+              ) : (
+                <div className="text-2xl">{formatPrice(art.acf.price)} лв</div>
+              )}
+            </div>
+          ) : null}
+          
+          {discountedPrice !== null ? (
+            <div className="text-2xl font-medium">{formatPrice(discountedPrice)} лв</div>
+          ) : null}
+        </div>
+        
+
         <Button href={`/contact?art=${encodeURIComponent(params.slug)}`} isLarge={true}>Направи Запитване</Button>
       </div>
     </Container>

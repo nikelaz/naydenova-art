@@ -31,8 +31,10 @@ const Home = async () => {
 
   return (
     <>
-      <section className="pb-12">
-        <Slider items={sliderItems} />
+      <section className="mb-4">
+        <Container>
+          <Slider items={sliderItems} />
+        </Container>
       </section>
       <Container>
         <section className="pt-4 pb-10 md:pt-12 md:pb-24">

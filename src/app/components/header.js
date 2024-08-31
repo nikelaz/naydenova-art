@@ -7,8 +7,8 @@ import './header.sass';
 
 const Header = () => (
   <Container>
-    <header className="flex justify-between items-center pt-5 pb-5 sm:pt-8 sm:pb-12 sm:flex-col">
-      <Link href="/" className="block sm:mb-7 hover:opacity-80 transition">
+    <header className="flex justify-between items-center pt-5 pb-5 sm:pt-5 sm:pb-9 sm:flex-col">
+      <Link href="/" className="block sm:mb-5 hover:opacity-80 transition">
         <Image className="w-48 sm:w-auto" src={logo} alt="naydenova.studio logo" width={240} height={111} />
       </Link>
       <Nav />

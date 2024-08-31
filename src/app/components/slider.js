@@ -13,8 +13,8 @@ const Slider = ({items, className}) => {
   });
 
   return (
-    <div className={`slider ${className}`}>
-      <AliceCarousel keyboardNavigation={true} mouseTracking items={sliderItems} />
+    <div className={`slider${className ? ` ${className}` : ''}`}>
+      <AliceCarousel keyboardNavigation={true} mouseTracking items={sliderItems} itemsFit="contain" autoWidth={true} autoHeight={true}/>
     </div>
   );
 };
