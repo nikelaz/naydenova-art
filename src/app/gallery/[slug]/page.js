@@ -8,7 +8,7 @@ import config from '@/app/config';
 import './page.sass';
 
 async function fetchArtBySlug(slug) {
-  const res = await fetch(`${config.apiUrl}/wp/v2/art?acf_format=standard&_fields=id,title,acf,slug&slug=${slug}`);
+  const res = await fetch(`${config.apiUrl}/wp/v2/art?acf_format=standard&_fields=id,title,acf,slug&slug=${slug}&per_page=100`);
   const art = await res.json();
   return art[0];
 }
@@ -82,7 +82,7 @@ const ArtDetails = async ({params}) => {
 };
 
 async function fetchArtSlugs() {
-  const res = await fetch(`${config.apiUrl}/wp/v2/art?_fields=slug`);
+  const res = await fetch(`${config.apiUrl}/wp/v2/art?_fields=slug&per_page=100`);
   const slugs = await res.json();
   return slugs;
 }

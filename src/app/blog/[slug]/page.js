@@ -17,7 +17,7 @@ const BlogDetails = async ({params}) => {
 }
 
 async function fetchPostDetails(slug) {
-  const res = await fetch(`${config.apiUrl}/wp/v2/posts?_embed=wp:featuredmedia&slug=${encodeURIComponent(slug)}`);
+  const res = await fetch(`${config.apiUrl}/wp/v2/posts?_embed=wp:featuredmedia&slug=${encodeURIComponent(slug)}&per_page=100`);
   const posts = await res.json();
   return posts;
 }
