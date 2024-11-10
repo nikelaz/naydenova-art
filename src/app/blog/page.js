@@ -6,7 +6,7 @@ import config from '../config';
 import './page.sass';
 
 async function fetchPosts() {
-  const res = await fetch(`${config.apiUrl}/wp/v2/posts?_embed=wp:featuredmedia`);
+  const res = await fetch(`${config.apiUrl}/wp/v2/posts?_embed=wp:featuredmedia&per_page=100`);
   const posts = await res.json();
   return posts;
 }

@@ -23,7 +23,7 @@ async function fetchPostDetails(slug) {
 }
 
 async function fetchPostSlugs() {
-  const res = await fetch(`${config.apiUrl}/wp/v2/posts?_fields=slug`);
+  const res = await fetch(`${config.apiUrl}/wp/v2/posts?_fields=slug&per_page=100`);
   const posts = await res.json();
   return posts;
 }
